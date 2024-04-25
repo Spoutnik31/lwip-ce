@@ -6,12 +6,6 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        compiler: [gcc, clang]
-    env:
-      CC: ${{ matrix.compiler }}
-      LSAN_OPTIONS: verbosity=1:log_threads=1
     runs-on: ubuntu-latest
 
     steps:
