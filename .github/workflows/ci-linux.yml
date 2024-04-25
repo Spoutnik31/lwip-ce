@@ -10,5 +10,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Install toolchain dependencies
+      run: cd toolchain && git submodule update --init --recursive
+    - name: Build Toolchain
+      run: make && make install
     - name: Compilation
       run: ./toolchain/bin/make app
